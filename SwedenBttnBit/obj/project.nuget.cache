@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "O+mU41f5w+iWLMxvmuWi6lVW72WfNGLQQC2PnP0zmJukPkyDjdIfbmHLrOaj2C8FwMOIIXBK1VZy01+4BmAW4w==",
+  "dgSpecHash": "xW8gxoJB/3ye/lMk2mcAFZo1KE0EtOBJqkiJ65E+MlBVPHUGKWTBcdlor1FlC17LoATUJ8icDCPHKJqSmuUmBg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ryans\\Downloads\\SwedenBttnBit-master\\SwedenBttnBit-master\\SwedenBttnBit\\SwedenBttnBit.csproj",
+  "projectFilePath": "C:\\Users\\ryans\\Source\\Repos\\SwedenButtonBitPayRoll\\SwedenBttnBit\\SwedenBttnBit.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ryans\\.nuget\\packages\\bouncycastle\\1.8.9\\bouncycastle.1.8.9.nupkg.sha512",
     "C:\\Users\\ryans\\.nuget\\packages\\itext7\\8.0.0\\itext7.8.0.0.nupkg.sha512",
