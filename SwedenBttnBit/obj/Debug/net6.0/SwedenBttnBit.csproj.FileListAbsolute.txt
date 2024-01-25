@@ -1,0 +1,159 @@
+C:\Users\ryans\source\repos\SwedenBttnBit\SwedenBttnBit\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\ryans\source\repos\SwedenBttnBit\SwedenBttnBit\bin\Debug\net6.0\appsettings.json
+C:\Users\ryans\source\repos\SwedenBttnBit\SwedenBttnBit\bin\Debug\net6.0\SwedenBttnBit.exe
+C:\Users\ryans\source\repos\SwedenBttnBit\SwedenBttnBit\bin\Debug\net6.0\SwedenBttnBit.deps.json
+C:\Users\ryans\source\repos\SwedenBttnBit\SwedenBttnBit\bin\Debug\net6.0\SwedenBttnBit.runtimeconfig.json
+C:\Users\ryans\source\repos\SwedenBttnBit\SwedenBttnBit\bin\Debug\net6.0\SwedenBttnBit.dll
+C:\Users\ryans\source\repos\SwedenBttnBit\SwedenBttnBit\bin\Debug\net6.0\SwedenBttnBit.pdb
+C:\Users\ryans\source\repos\SwedenBttnBit\SwedenBttnBit\bin\Debug\net6.0\Microsoft.OpenApi.dll
+C:\Users\ryans\source\repos\SwedenBttnBit\SwedenBttnBit\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\ryans\source\repos\SwedenBttnBit\SwedenBttnBit\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\ryans\source\repos\SwedenBttnBit\SwedenBttnBit\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\ryans\source\repos\SwedenBttnBit\SwedenBttnBit\obj\Debug\net6.0\SwedenBttnBit.csproj.AssemblyReference.cache
+C:\Users\ryans\source\repos\SwedenBttnBit\SwedenBttnBit\obj\Debug\net6.0\SwedenBttnBit.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ryans\source\repos\SwedenBttnBit\SwedenBttnBit\obj\Debug\net6.0\SwedenBttnBit.AssemblyInfoInputs.cache
+C:\Users\ryans\source\repos\SwedenBttnBit\SwedenBttnBit\obj\Debug\net6.0\SwedenBttnBit.AssemblyInfo.cs
+C:\Users\ryans\source\repos\SwedenBttnBit\SwedenBttnBit\obj\Debug\net6.0\SwedenBttnBit.csproj.CoreCompileInputs.cache
+C:\Users\ryans\source\repos\SwedenBttnBit\SwedenBttnBit\obj\Debug\net6.0\SwedenBttnBit.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\ryans\source\repos\SwedenBttnBit\SwedenBttnBit\obj\Debug\net6.0\SwedenBttnBit.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\ryans\source\repos\SwedenBttnBit\SwedenBttnBit\obj\Debug\net6.0\staticwebassets\msbuild.SwedenBttnBit.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\ryans\source\repos\SwedenBttnBit\SwedenBttnBit\obj\Debug\net6.0\staticwebassets\msbuild.build.SwedenBttnBit.props
+C:\Users\ryans\source\repos\SwedenBttnBit\SwedenBttnBit\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.SwedenBttnBit.props
+C:\Users\ryans\source\repos\SwedenBttnBit\SwedenBttnBit\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.SwedenBttnBit.props
+C:\Users\ryans\source\repos\SwedenBttnBit\SwedenBttnBit\obj\Debug\net6.0\staticwebassets.pack.json
+C:\Users\ryans\source\repos\SwedenBttnBit\SwedenBttnBit\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\ryans\source\repos\SwedenBttnBit\SwedenBttnBit\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\ryans\source\repos\SwedenBttnBit\SwedenBttnBit\obj\Debug\net6.0\scopedcss\bundle\SwedenBttnBit.styles.css
+C:\Users\ryans\source\repos\SwedenBttnBit\SwedenBttnBit\obj\Debug\net6.0\SwedenBttnBit.csproj.CopyComplete
+C:\Users\ryans\source\repos\SwedenBttnBit\SwedenBttnBit\obj\Debug\net6.0\SwedenBttnBit.dll
+C:\Users\ryans\source\repos\SwedenBttnBit\SwedenBttnBit\obj\Debug\net6.0\refint\SwedenBttnBit.dll
+C:\Users\ryans\source\repos\SwedenBttnBit\SwedenBttnBit\obj\Debug\net6.0\SwedenBttnBit.pdb
+C:\Users\ryans\source\repos\SwedenBttnBit\SwedenBttnBit\obj\Debug\net6.0\SwedenBttnBit.genruntimeconfig.cache
+C:\Users\ryans\source\repos\SwedenBttnBit\SwedenBttnBit\obj\Debug\net6.0\ref\SwedenBttnBit.dll
+C:\Users\ryans\source\repos\SwedenBttnBit\SwedenBttnBit\bin\Debug\net6.0\itext.barcodes.dll
+C:\Users\ryans\source\repos\SwedenBttnBit\SwedenBttnBit\bin\Debug\net6.0\itext.bouncy-castle-connector.dll
+C:\Users\ryans\source\repos\SwedenBttnBit\SwedenBttnBit\bin\Debug\net6.0\itext.forms.dll
+C:\Users\ryans\source\repos\SwedenBttnBit\SwedenBttnBit\bin\Debug\net6.0\itext.io.dll
+C:\Users\ryans\source\repos\SwedenBttnBit\SwedenBttnBit\bin\Debug\net6.0\itext.kernel.dll
+C:\Users\ryans\source\repos\SwedenBttnBit\SwedenBttnBit\bin\Debug\net6.0\itext.layout.dll
+C:\Users\ryans\source\repos\SwedenBttnBit\SwedenBttnBit\bin\Debug\net6.0\itext.pdfa.dll
+C:\Users\ryans\source\repos\SwedenBttnBit\SwedenBttnBit\bin\Debug\net6.0\itext.sign.dll
+C:\Users\ryans\source\repos\SwedenBttnBit\SwedenBttnBit\bin\Debug\net6.0\itext.styledxmlparser.dll
+C:\Users\ryans\source\repos\SwedenBttnBit\SwedenBttnBit\bin\Debug\net6.0\itext.svg.dll
+C:\Users\ryans\source\repos\SwedenBttnBit\SwedenBttnBit\bin\Debug\net6.0\itext.commons.dll
+C:\Users\ryans\source\repos\SwedenBttnBit\SwedenBttnBit\bin\Debug\net6.0\Microsoft.DotNet.PlatformAbstractions.dll
+C:\Users\ryans\source\repos\SwedenBttnBit\SwedenBttnBit\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\ryans\source\repos\SwedenBttnBit\SwedenBttnBit\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\ryans\source\repos\SwedenBttnBit\SwedenBttnBit\bin\Debug\net6.0\BouncyCastle.Crypto.dll
+C:\Users\ryans\source\repos\SwedenBttnBit\SwedenBttnBit\bin\Debug\net6.0\itext.bouncy-castle-adapter.dll
+C:\Users\ryans\source\repos\SwedenBttnBit\SwedenBttnBit\bin\Debug\net6.0\bc-fips-1.0.2.dll
+C:\Users\ryans\source\repos\SwedenBttnBit\SwedenBttnBit\bin\Debug\net6.0\bcpkix-fips-1.0.2.dll
+C:\Users\ryans\source\repos\SwedenBttnBit\SwedenBttnBit\bin\Debug\net6.0\itext.bouncy-castle-fips-adapter.dll
+C:\Users\ryans\source\repos\SwedenBttnBit\SwedenBttnBit\bin\Debug\net6.0\Fonts\Lato-Regular.ttf
+C:\Users\ryans\source\repos\SwedenBttnBit\SwedenBttnBit\bin\Debug\net6.0\Images\LOGO.png
+D:\vs repos\swedenbttbr\SwedenBttnBit\bin\Debug\net6.0\appsettings.Development.json
+D:\vs repos\swedenbttbr\SwedenBttnBit\bin\Debug\net6.0\appsettings.json
+D:\vs repos\swedenbttbr\SwedenBttnBit\bin\Debug\net6.0\SwedenBttnBit.exe
+D:\vs repos\swedenbttbr\SwedenBttnBit\bin\Debug\net6.0\Fonts\Lato-Regular.ttf
+D:\vs repos\swedenbttbr\SwedenBttnBit\bin\Debug\net6.0\Images\LOGO.png
+D:\vs repos\swedenbttbr\SwedenBttnBit\bin\Debug\net6.0\SwedenBttnBit.deps.json
+D:\vs repos\swedenbttbr\SwedenBttnBit\bin\Debug\net6.0\SwedenBttnBit.runtimeconfig.json
+D:\vs repos\swedenbttbr\SwedenBttnBit\bin\Debug\net6.0\SwedenBttnBit.dll
+D:\vs repos\swedenbttbr\SwedenBttnBit\bin\Debug\net6.0\SwedenBttnBit.pdb
+D:\vs repos\swedenbttbr\SwedenBttnBit\bin\Debug\net6.0\itext.barcodes.dll
+D:\vs repos\swedenbttbr\SwedenBttnBit\bin\Debug\net6.0\itext.bouncy-castle-connector.dll
+D:\vs repos\swedenbttbr\SwedenBttnBit\bin\Debug\net6.0\itext.forms.dll
+D:\vs repos\swedenbttbr\SwedenBttnBit\bin\Debug\net6.0\itext.io.dll
+D:\vs repos\swedenbttbr\SwedenBttnBit\bin\Debug\net6.0\itext.kernel.dll
+D:\vs repos\swedenbttbr\SwedenBttnBit\bin\Debug\net6.0\itext.layout.dll
+D:\vs repos\swedenbttbr\SwedenBttnBit\bin\Debug\net6.0\itext.pdfa.dll
+D:\vs repos\swedenbttbr\SwedenBttnBit\bin\Debug\net6.0\itext.sign.dll
+D:\vs repos\swedenbttbr\SwedenBttnBit\bin\Debug\net6.0\itext.styledxmlparser.dll
+D:\vs repos\swedenbttbr\SwedenBttnBit\bin\Debug\net6.0\itext.svg.dll
+D:\vs repos\swedenbttbr\SwedenBttnBit\bin\Debug\net6.0\itext.bouncy-castle-adapter.dll
+D:\vs repos\swedenbttbr\SwedenBttnBit\bin\Debug\net6.0\bc-fips-1.0.2.dll
+D:\vs repos\swedenbttbr\SwedenBttnBit\bin\Debug\net6.0\bcpkix-fips-1.0.2.dll
+D:\vs repos\swedenbttbr\SwedenBttnBit\bin\Debug\net6.0\itext.bouncy-castle-fips-adapter.dll
+D:\vs repos\swedenbttbr\SwedenBttnBit\bin\Debug\net6.0\itext.commons.dll
+D:\vs repos\swedenbttbr\SwedenBttnBit\bin\Debug\net6.0\Microsoft.DotNet.PlatformAbstractions.dll
+D:\vs repos\swedenbttbr\SwedenBttnBit\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+D:\vs repos\swedenbttbr\SwedenBttnBit\bin\Debug\net6.0\Microsoft.OpenApi.dll
+D:\vs repos\swedenbttbr\SwedenBttnBit\bin\Debug\net6.0\Newtonsoft.Json.dll
+D:\vs repos\swedenbttbr\SwedenBttnBit\bin\Debug\net6.0\BouncyCastle.Crypto.dll
+D:\vs repos\swedenbttbr\SwedenBttnBit\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\vs repos\swedenbttbr\SwedenBttnBit\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\vs repos\swedenbttbr\SwedenBttnBit\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\vs repos\swedenbttbr\SwedenBttnBit\obj\Debug\net6.0\SwedenBttnBit.csproj.AssemblyReference.cache
+D:\vs repos\swedenbttbr\SwedenBttnBit\obj\Debug\net6.0\SwedenBttnBit.GeneratedMSBuildEditorConfig.editorconfig
+D:\vs repos\swedenbttbr\SwedenBttnBit\obj\Debug\net6.0\SwedenBttnBit.AssemblyInfoInputs.cache
+D:\vs repos\swedenbttbr\SwedenBttnBit\obj\Debug\net6.0\SwedenBttnBit.AssemblyInfo.cs
+D:\vs repos\swedenbttbr\SwedenBttnBit\obj\Debug\net6.0\SwedenBttnBit.csproj.CoreCompileInputs.cache
+D:\vs repos\swedenbttbr\SwedenBttnBit\obj\Debug\net6.0\SwedenBttnBit.MvcApplicationPartsAssemblyInfo.cs
+D:\vs repos\swedenbttbr\SwedenBttnBit\obj\Debug\net6.0\SwedenBttnBit.MvcApplicationPartsAssemblyInfo.cache
+D:\vs repos\swedenbttbr\SwedenBttnBit\obj\Debug\net6.0\staticwebassets\msbuild.SwedenBttnBit.Microsoft.AspNetCore.StaticWebAssets.props
+D:\vs repos\swedenbttbr\SwedenBttnBit\obj\Debug\net6.0\staticwebassets\msbuild.build.SwedenBttnBit.props
+D:\vs repos\swedenbttbr\SwedenBttnBit\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.SwedenBttnBit.props
+D:\vs repos\swedenbttbr\SwedenBttnBit\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.SwedenBttnBit.props
+D:\vs repos\swedenbttbr\SwedenBttnBit\obj\Debug\net6.0\staticwebassets.pack.json
+D:\vs repos\swedenbttbr\SwedenBttnBit\obj\Debug\net6.0\staticwebassets.build.json
+D:\vs repos\swedenbttbr\SwedenBttnBit\obj\Debug\net6.0\staticwebassets.development.json
+D:\vs repos\swedenbttbr\SwedenBttnBit\obj\Debug\net6.0\scopedcss\bundle\SwedenBttnBit.styles.css
+D:\vs repos\swedenbttbr\SwedenBttnBit\obj\Debug\net6.0\SwedenBttnBit.csproj.CopyComplete
+D:\vs repos\swedenbttbr\SwedenBttnBit\obj\Debug\net6.0\SwedenBttnBit.dll
+D:\vs repos\swedenbttbr\SwedenBttnBit\obj\Debug\net6.0\refint\SwedenBttnBit.dll
+D:\vs repos\swedenbttbr\SwedenBttnBit\obj\Debug\net6.0\SwedenBttnBit.pdb
+D:\vs repos\swedenbttbr\SwedenBttnBit\obj\Debug\net6.0\SwedenBttnBit.genruntimeconfig.cache
+D:\vs repos\swedenbttbr\SwedenBttnBit\obj\Debug\net6.0\ref\SwedenBttnBit.dll
+C:\Users\ryans\Downloads\SwedenBttnBit-master\SwedenBttnBit-master\SwedenBttnBit\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\ryans\Downloads\SwedenBttnBit-master\SwedenBttnBit-master\SwedenBttnBit\bin\Debug\net6.0\appsettings.json
+C:\Users\ryans\Downloads\SwedenBttnBit-master\SwedenBttnBit-master\SwedenBttnBit\bin\Debug\net6.0\SwedenBttnBit.exe
+C:\Users\ryans\Downloads\SwedenBttnBit-master\SwedenBttnBit-master\SwedenBttnBit\bin\Debug\net6.0\Fonts\Lato-Regular.ttf
+C:\Users\ryans\Downloads\SwedenBttnBit-master\SwedenBttnBit-master\SwedenBttnBit\bin\Debug\net6.0\Images\LOGO.png
+C:\Users\ryans\Downloads\SwedenBttnBit-master\SwedenBttnBit-master\SwedenBttnBit\bin\Debug\net6.0\SwedenBttnBit.deps.json
+C:\Users\ryans\Downloads\SwedenBttnBit-master\SwedenBttnBit-master\SwedenBttnBit\bin\Debug\net6.0\SwedenBttnBit.runtimeconfig.json
+C:\Users\ryans\Downloads\SwedenBttnBit-master\SwedenBttnBit-master\SwedenBttnBit\bin\Debug\net6.0\SwedenBttnBit.dll
+C:\Users\ryans\Downloads\SwedenBttnBit-master\SwedenBttnBit-master\SwedenBttnBit\bin\Debug\net6.0\SwedenBttnBit.pdb
+C:\Users\ryans\Downloads\SwedenBttnBit-master\SwedenBttnBit-master\SwedenBttnBit\bin\Debug\net6.0\itext.barcodes.dll
+C:\Users\ryans\Downloads\SwedenBttnBit-master\SwedenBttnBit-master\SwedenBttnBit\bin\Debug\net6.0\itext.bouncy-castle-connector.dll
+C:\Users\ryans\Downloads\SwedenBttnBit-master\SwedenBttnBit-master\SwedenBttnBit\bin\Debug\net6.0\itext.forms.dll
+C:\Users\ryans\Downloads\SwedenBttnBit-master\SwedenBttnBit-master\SwedenBttnBit\bin\Debug\net6.0\itext.io.dll
+C:\Users\ryans\Downloads\SwedenBttnBit-master\SwedenBttnBit-master\SwedenBttnBit\bin\Debug\net6.0\itext.kernel.dll
+C:\Users\ryans\Downloads\SwedenBttnBit-master\SwedenBttnBit-master\SwedenBttnBit\bin\Debug\net6.0\itext.layout.dll
+C:\Users\ryans\Downloads\SwedenBttnBit-master\SwedenBttnBit-master\SwedenBttnBit\bin\Debug\net6.0\itext.pdfa.dll
+C:\Users\ryans\Downloads\SwedenBttnBit-master\SwedenBttnBit-master\SwedenBttnBit\bin\Debug\net6.0\itext.sign.dll
+C:\Users\ryans\Downloads\SwedenBttnBit-master\SwedenBttnBit-master\SwedenBttnBit\bin\Debug\net6.0\itext.styledxmlparser.dll
+C:\Users\ryans\Downloads\SwedenBttnBit-master\SwedenBttnBit-master\SwedenBttnBit\bin\Debug\net6.0\itext.svg.dll
+C:\Users\ryans\Downloads\SwedenBttnBit-master\SwedenBttnBit-master\SwedenBttnBit\bin\Debug\net6.0\itext.bouncy-castle-adapter.dll
+C:\Users\ryans\Downloads\SwedenBttnBit-master\SwedenBttnBit-master\SwedenBttnBit\bin\Debug\net6.0\bc-fips-1.0.2.dll
+C:\Users\ryans\Downloads\SwedenBttnBit-master\SwedenBttnBit-master\SwedenBttnBit\bin\Debug\net6.0\bcpkix-fips-1.0.2.dll
+C:\Users\ryans\Downloads\SwedenBttnBit-master\SwedenBttnBit-master\SwedenBttnBit\bin\Debug\net6.0\itext.bouncy-castle-fips-adapter.dll
+C:\Users\ryans\Downloads\SwedenBttnBit-master\SwedenBttnBit-master\SwedenBttnBit\bin\Debug\net6.0\itext.commons.dll
+C:\Users\ryans\Downloads\SwedenBttnBit-master\SwedenBttnBit-master\SwedenBttnBit\bin\Debug\net6.0\Microsoft.DotNet.PlatformAbstractions.dll
+C:\Users\ryans\Downloads\SwedenBttnBit-master\SwedenBttnBit-master\SwedenBttnBit\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\ryans\Downloads\SwedenBttnBit-master\SwedenBttnBit-master\SwedenBttnBit\bin\Debug\net6.0\Microsoft.OpenApi.dll
+C:\Users\ryans\Downloads\SwedenBttnBit-master\SwedenBttnBit-master\SwedenBttnBit\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\ryans\Downloads\SwedenBttnBit-master\SwedenBttnBit-master\SwedenBttnBit\bin\Debug\net6.0\BouncyCastle.Crypto.dll
+C:\Users\ryans\Downloads\SwedenBttnBit-master\SwedenBttnBit-master\SwedenBttnBit\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\ryans\Downloads\SwedenBttnBit-master\SwedenBttnBit-master\SwedenBttnBit\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\ryans\Downloads\SwedenBttnBit-master\SwedenBttnBit-master\SwedenBttnBit\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\ryans\Downloads\SwedenBttnBit-master\SwedenBttnBit-master\SwedenBttnBit\obj\Debug\net6.0\SwedenBttnBit.csproj.AssemblyReference.cache
+C:\Users\ryans\Downloads\SwedenBttnBit-master\SwedenBttnBit-master\SwedenBttnBit\obj\Debug\net6.0\SwedenBttnBit.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ryans\Downloads\SwedenBttnBit-master\SwedenBttnBit-master\SwedenBttnBit\obj\Debug\net6.0\SwedenBttnBit.AssemblyInfoInputs.cache
+C:\Users\ryans\Downloads\SwedenBttnBit-master\SwedenBttnBit-master\SwedenBttnBit\obj\Debug\net6.0\SwedenBttnBit.AssemblyInfo.cs
+C:\Users\ryans\Downloads\SwedenBttnBit-master\SwedenBttnBit-master\SwedenBttnBit\obj\Debug\net6.0\SwedenBttnBit.csproj.CoreCompileInputs.cache
+C:\Users\ryans\Downloads\SwedenBttnBit-master\SwedenBttnBit-master\SwedenBttnBit\obj\Debug\net6.0\SwedenBttnBit.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\ryans\Downloads\SwedenBttnBit-master\SwedenBttnBit-master\SwedenBttnBit\obj\Debug\net6.0\SwedenBttnBit.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\ryans\Downloads\SwedenBttnBit-master\SwedenBttnBit-master\SwedenBttnBit\obj\Debug\net6.0\staticwebassets\msbuild.SwedenBttnBit.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\ryans\Downloads\SwedenBttnBit-master\SwedenBttnBit-master\SwedenBttnBit\obj\Debug\net6.0\staticwebassets\msbuild.build.SwedenBttnBit.props
+C:\Users\ryans\Downloads\SwedenBttnBit-master\SwedenBttnBit-master\SwedenBttnBit\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.SwedenBttnBit.props
+C:\Users\ryans\Downloads\SwedenBttnBit-master\SwedenBttnBit-master\SwedenBttnBit\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.SwedenBttnBit.props
+C:\Users\ryans\Downloads\SwedenBttnBit-master\SwedenBttnBit-master\SwedenBttnBit\obj\Debug\net6.0\staticwebassets.pack.json
+C:\Users\ryans\Downloads\SwedenBttnBit-master\SwedenBttnBit-master\SwedenBttnBit\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\ryans\Downloads\SwedenBttnBit-master\SwedenBttnBit-master\SwedenBttnBit\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\ryans\Downloads\SwedenBttnBit-master\SwedenBttnBit-master\SwedenBttnBit\obj\Debug\net6.0\scopedcss\bundle\SwedenBttnBit.styles.css
+C:\Users\ryans\Downloads\SwedenBttnBit-master\SwedenBttnBit-master\SwedenBttnBit\obj\Debug\net6.0\SwedenBttnBit.csproj.CopyComplete
+C:\Users\ryans\Downloads\SwedenBttnBit-master\SwedenBttnBit-master\SwedenBttnBit\obj\Debug\net6.0\SwedenBttnBit.dll
+C:\Users\ryans\Downloads\SwedenBttnBit-master\SwedenBttnBit-master\SwedenBttnBit\obj\Debug\net6.0\refint\SwedenBttnBit.dll
+C:\Users\ryans\Downloads\SwedenBttnBit-master\SwedenBttnBit-master\SwedenBttnBit\obj\Debug\net6.0\SwedenBttnBit.pdb
+C:\Users\ryans\Downloads\SwedenBttnBit-master\SwedenBttnBit-master\SwedenBttnBit\obj\Debug\net6.0\SwedenBttnBit.genruntimeconfig.cache
+C:\Users\ryans\Downloads\SwedenBttnBit-master\SwedenBttnBit-master\SwedenBttnBit\obj\Debug\net6.0\ref\SwedenBttnBit.dll
