@@ -7,25 +7,35 @@ using iText.Layout;
 using iText.Layout.Borders;
 using iText.Layout.Element;
 using iText.Layout.Properties;
+using MailKit.Net.Smtp;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using MimeKit;
 using SwedenBttnBit.Domain;
+using System.IO;
+using System.Net;
+using System.Net.Mail;
+using MimeKit.Utils;
 using static iText.Kernel.Pdf.Colorspace.PdfDeviceCs;
+
 
 namespace SwedenBttnBit.Controllers
 {
     public class PayRollController : Controller
     {
+        private readonly SmtpSettings _smtpSettings;
+        public PayRollController(IConfiguration configuration)
+        {
+            _smtpSettings = configuration.GetSection("SmtpSettings").Get<SmtpSettings>();
+        }
 
         [HttpPost("get-payroll")]
-        public IActionResult generatePDF([FromBody] PayRoll payroll)
+        public IActionResult GeneratePDF([FromBody] PayRoll payroll)
         {
             PdfFont fontLato = PdfFontFactory.CreateFont("Fonts/Lato-Regular.ttf", PdfEncodings.IDENTITY_H);
             float generalFontSize = 11f;
             Table generalTable = new Table(UnitValue.CreatePercentArray(new float[] { 100f })).SetWidth(UnitValue.CreatePercentValue(100));
             Color blue = new DeviceRgb(70, 130, 169);
-            Color lightGray = new DeviceRgb(246, 244, 235);
-            Color lightBlue = new DeviceRgb(145, 200, 228);
             Color darkBlue = new DeviceRgb(39, 55, 66);
             Color darkerWhite = new DeviceRgb(221, 230, 237);
             decimal sumTotal = 0;
@@ -103,22 +113,20 @@ namespace SwedenBttnBit.Controllers
                 return height; // opcional: devolver un valor si es necesario
             };
 
-
             #endregion
-            var a = payroll;
             var day = payroll.Date.Day;
             var month = payroll.Date.Month;
             var year = payroll.Date.Year;
             var fullyear = day + "_" + month + "_" + year;
-            string namefile = payroll.GuideNumber.ToString().Trim() + "_"+fullyear.Trim().ToString()+ payroll.Destinatary.Trim().ToString()+ ".pdf";
+            string namefile = $"{payroll.GuideNumber.ToString().Trim()}_{fullyear.Trim()}{payroll.Destinatary?.Trim()}.pdf";
             namefile = namefile.Replace(" ", "_");
 
 
 
-            MemoryStream memoryStream = new MemoryStream();
-            PdfWriter pdfWriter = new PdfWriter(memoryStream);
-            PdfDocument pdf = new PdfDocument(pdfWriter);
-            Document document = new Document(pdf, PageSize.A4);
+            MemoryStream memoryStream = new();
+            PdfWriter pdfWriter = new(memoryStream);
+            PdfDocument pdf = new(pdfWriter);
+            Document document = new(pdf, PageSize.A4);
             document.SetMargins(30, 30, 30, 30);
 
             //Header
@@ -126,8 +134,8 @@ namespace SwedenBttnBit.Controllers
 
             Table companyNameAndLogo = new Table(UnitValue.CreatePercentArray(new float[] { 80f, 20f })).SetWidth(UnitValue.CreatePercentValue(100));
             companyNameAndLogo.AddCell(new Cell().Add(SwedenLogo).SetBorder(Border.NO_BORDER));
-            
-            companyNameAndLogo.AddCell(getCellBasic("Fecha: " + day +"/" + month+"/"+year, 1, 1, TextAlignment.LEFT, fontLato, generalFontSize, true));
+
+            companyNameAndLogo.AddCell(getCellBasic("Fecha: " + day + "/" + month + "/" + year, 1, 1, TextAlignment.LEFT, fontLato, generalFontSize, true));
             companyNameAndLogo.AddCell(getCellBasic("RUC : 20606064552", 1, 2, TextAlignment.LEFT, fontLato, 10, true).SetMarginLeft(50));
             companyNameAndLogo.AddCell(getCellBasic("Mayorazgo 4 etapa, Av. Asturias\r\nAte – Vitarte", 1, 2, TextAlignment.LEFT, fontLato, 10, true).SetMarginLeft(50));
 
@@ -146,7 +154,7 @@ namespace SwedenBttnBit.Controllers
             bodyTable.AddCell(getCellBasic("Guía N°: " + payroll.GuideNumber, 1, 1, TextAlignment.LEFT, fontLato, generalFontSize, false).SetPaddingLeft(10).SetPadding(7).SetBackgroundColor(darkerWhite));
 
             generalTable.AddCell(new Cell(1, 1).Add(bodyTable).SetBorder(Border.NO_BORDER)).SetBorder(Border.NO_BORDER);
-            if(payroll.Products.Count >= 5)
+            if (payroll.Products?.Count >= 5)
             {
                 AddSpacer(5);
             }
@@ -156,13 +164,13 @@ namespace SwedenBttnBit.Controllers
             }
 
 
-            Table products = new Table(UnitValue.CreatePercentArray(new float[] { 15f,15f,15f,55f })).SetWidth(UnitValue.CreatePercentValue(100));
+            Table products = new Table(UnitValue.CreatePercentArray(new float[] { 15f, 15f, 15f, 55f })).SetWidth(UnitValue.CreatePercentValue(100));
             products.AddCell(getCellBasic("Precio", 1, 1, TextAlignment.CENTER, fontLato, generalFontSize, false).SetBold().SetBackgroundColor(blue).SetFontColor(darkBlue));
             products.AddCell(getCellBasic("Cantidad", 1, 1, TextAlignment.CENTER, fontLato, generalFontSize, false).SetBold().SetBackgroundColor(blue).SetFontColor(darkBlue));
             products.AddCell(getCellBasic("Total", 1, 1, TextAlignment.CENTER, fontLato, generalFontSize, false).SetBold().SetBackgroundColor(blue).SetFontColor(darkBlue));
             products.AddCell(getCellBasic("Descripción", 1, 1, TextAlignment.LEFT, fontLato, generalFontSize, false).SetBold().SetPaddingLeft(10).SetBackgroundColor(blue).SetFontColor(darkBlue));
-            
-            if(payroll.Products.Count > 0 && payroll != null)
+
+            if (payroll.Products?.Count > 0 && payroll != null)
             {
 
 
@@ -176,12 +184,12 @@ namespace SwedenBttnBit.Controllers
 
                     var total_price = payroll.Products[i].Price * payroll.Products[i].Quantity;
                     sumTotal += total_price;
-                    products.AddCell(getCellBasic("$"+payroll.Products[i].Price.ToString(), 1, 1, TextAlignment.CENTER, fontLato, 10, false).SetBackgroundColor(backgroundproduct));
+                    products.AddCell(getCellBasic("$" + payroll.Products[i].Price.ToString(), 1, 1, TextAlignment.CENTER, fontLato, 10, false).SetBackgroundColor(backgroundproduct));
                     products.AddCell(getCellBasic(payroll.Products[i].Quantity.ToString(), 1, 1, TextAlignment.CENTER, fontLato, 10, false).SetBackgroundColor(backgroundproduct));
                     products.AddCell(getCellBasic("$" + total_price.ToString(), 1, 1, TextAlignment.CENTER, fontLato, 10, false).SetBackgroundColor(backgroundproduct));
                     if (payroll.Products[i].Description != null)
                     {
-                        products.AddCell(getCellBasic(payroll.Products[i].Description.ToString(), 1, 1, TextAlignment.LEFT, fontLato, 10, false).SetPaddingLeft(10).SetPaddingTop(4).SetPaddingBottom(4).SetBackgroundColor(backgroundproduct).SetPaddingRight(10));
+                        products.AddCell(getCellBasic(payroll.Products[i].Description!.ToString(), 1, 1, TextAlignment.LEFT, fontLato, 10, false).SetPaddingLeft(10).SetPaddingTop(4).SetPaddingBottom(4).SetBackgroundColor(backgroundproduct).SetPaddingRight(10));
                     }
                 }
             }
@@ -189,10 +197,10 @@ namespace SwedenBttnBit.Controllers
 
             AddSpacer(5);
             Table totalTable = new Table(UnitValue.CreatePercentArray(new float[] { 80f, 20f })).SetWidth(UnitValue.CreatePercentValue(100));
-            totalTable.AddCell(getCellBasic("Monto total: $"+ sumTotal, 1, 1, TextAlignment.LEFT, fontLato, generalFontSize, false).SetPaddingLeft(10).SetBorder(Border.NO_BORDER));
+            totalTable.AddCell(getCellBasic("Monto total: $" + sumTotal, 1, 1, TextAlignment.LEFT, fontLato, generalFontSize, false).SetPaddingLeft(10).SetBorder(Border.NO_BORDER));
 
             generalTable.AddCell(new Cell(1, 1).Add(totalTable).SetBorder(Border.NO_BORDER)).SetBorder(Border.NO_BORDER);
-            if(payroll.Products.Count > 4)
+            if (payroll?.Products?.Count > 4)
             {
                 AddSpacer(50);
             }
@@ -212,8 +220,36 @@ namespace SwedenBttnBit.Controllers
             document.Add(generalTable);
             document.Close();
             byte[] file = memoryStream.ToArray();
+
+            SendEmailWithAttachment("ryansweden123@gmail.com", "Payroll", "Payroll", file, namefile);
+
+
             return File(file, "application/pdf", namefile);
 
+        }
+        private void SendEmailWithAttachment(string toEmail, string subject, string body, byte[] fileContent, string fileName)
+        {
+            var message = new MimeMessage();
+            message.From.Add(new MailboxAddress("Sweden Billing System", _smtpSettings.Username));
+            message.To.Add(new MailboxAddress("", toEmail));
+            message.Subject = subject;
+
+            var builder = new BodyBuilder { TextBody = body };
+
+            // Crear la instancia de ContentDisposition
+            var attachment = builder.Attachments.Add(fileName, fileContent);
+            attachment.ContentDisposition = new ContentDisposition(ContentDisposition.Attachment);
+
+            message.Body = builder.ToMessageBody();
+
+            using (var client = new MailKit.Net.Smtp.SmtpClient())
+            {
+                client.Connect(_smtpSettings.Server, _smtpSettings.Port, false);
+                client.Authenticate(_smtpSettings.Username, _smtpSettings.Password);
+
+                client.Send(message);
+                client.Disconnect(true);
+            }
         }
     }
 }
