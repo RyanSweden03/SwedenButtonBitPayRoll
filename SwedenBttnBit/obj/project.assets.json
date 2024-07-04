@@ -11,7 +11,20 @@
           "lib/BouncyCastle.Crypto.dll": {}
         }
       },
-      "itext7/8.0.0": {
+      "BouncyCastle.Cryptography/2.4.0": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/BouncyCastle.Cryptography.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/BouncyCastle.Cryptography.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "itext/8.0.4": {
         "type": "package",
         "dependencies": {
           "Microsoft.DotNet.PlatformAbstractions": "1.1.0",
@@ -28,7 +41,7 @@
           "System.Threading.Thread": "4.3.0",
           "System.Threading.ThreadPool": "4.3.0",
           "System.Xml.XmlDocument": "4.3.0",
-          "itext7.commons": "8.0.0"
+          "itext.commons": "8.0.4"
         },
         "compile": {
           "lib/netstandard2.0/itext.barcodes.dll": {
@@ -50,6 +63,9 @@
             "related": ".xml"
           },
           "lib/netstandard2.0/itext.pdfa.dll": {
+            "related": ".xml"
+          },
+          "lib/netstandard2.0/itext.pdfua.dll": {
             "related": ".xml"
           },
           "lib/netstandard2.0/itext.sign.dll": {
@@ -84,6 +100,9 @@
           "lib/netstandard2.0/itext.pdfa.dll": {
             "related": ".xml"
           },
+          "lib/netstandard2.0/itext.pdfua.dll": {
+            "related": ".xml"
+          },
           "lib/netstandard2.0/itext.sign.dll": {
             "related": ".xml"
           },
@@ -95,11 +114,11 @@
           }
         }
       },
-      "itext7.bouncy-castle-adapter/8.0.0": {
+      "itext.bouncy-castle-adapter/8.0.4": {
         "type": "package",
         "dependencies": {
-          "Portable.BouncyCastle": "1.8.10",
-          "itext7.commons": "8.0.0"
+          "BouncyCastle.Cryptography": "2.2.1",
+          "itext.commons": "8.0.4"
         },
         "compile": {
           "lib/netstandard2.0/itext.bouncy-castle-adapter.dll": {
@@ -112,10 +131,10 @@
           }
         }
       },
-      "itext7.bouncy-castle-fips-adapter/8.0.0": {
+      "itext.bouncy-castle-fips-adapter/8.0.4": {
         "type": "package",
         "dependencies": {
-          "itext7.commons": "8.0.0"
+          "itext.commons": "8.0.4"
         },
         "compile": {
           "lib/netstandard2.0/bc-fips-1.0.2.dll": {},
@@ -132,7 +151,7 @@
           }
         }
       },
-      "itext7.commons/8.0.0": {
+      "itext.commons/8.0.4": {
         "type": "package",
         "dependencies": {
           "Microsoft.Extensions.Logging": "5.0.0",
@@ -146,6 +165,40 @@
         "runtime": {
           "lib/netstandard2.0/itext.commons.dll": {
             "related": ".xml"
+          }
+        }
+      },
+      "itext7/8.0.4": {
+        "type": "package",
+        "dependencies": {
+          "itext": "8.0.4"
+        }
+      },
+      "itext7.bouncy-castle-adapter/8.0.4": {
+        "type": "package",
+        "dependencies": {
+          "itext.bouncy-castle-adapter": "8.0.4"
+        }
+      },
+      "itext7.bouncy-castle-fips-adapter/8.0.4": {
+        "type": "package",
+        "dependencies": {
+          "itext.bouncy-castle-fips-adapter": "8.0.4"
+        }
+      },
+      "MailKit/4.7.0": {
+        "type": "package",
+        "dependencies": {
+          "MimeKit": "4.7.0"
+        },
+        "compile": {
+          "lib/net6.0/MailKit.dll": {
+            "related": ".dll.config;.pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/MailKit.dll": {
+            "related": ".dll.config;.pdb;.xml"
           }
         }
       },
@@ -304,7 +357,7 @@
           "lib/netstandard1.0/_._": {}
         }
       },
-      "Microsoft.OpenApi/1.2.3": {
+      "Microsoft.OpenApi/1.6.14": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/Microsoft.OpenApi.dll": {
@@ -358,6 +411,23 @@
           }
         }
       },
+      "MimeKit/4.7.0": {
+        "type": "package",
+        "dependencies": {
+          "BouncyCastle.Cryptography": "2.4.0",
+          "System.Security.Cryptography.Pkcs": "8.0.0"
+        },
+        "compile": {
+          "lib/net6.0/MimeKit.dll": {
+            "related": ".dll.config;.pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/MimeKit.dll": {
+            "related": ".dll.config;.pdb;.xml"
+          }
+        }
+      },
       "Newtonsoft.Json/13.0.1": {
         "type": "package",
         "compile": {
@@ -367,19 +437,6 @@
         },
         "runtime": {
           "lib/netstandard2.0/Newtonsoft.Json.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "Portable.BouncyCastle/1.8.10": {
-        "type": "package",
-        "compile": {
-          "lib/netstandard2.0/BouncyCastle.Crypto.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/BouncyCastle.Crypto.dll": {
             "related": ".xml"
           }
         }
@@ -529,22 +586,22 @@
           }
         }
       },
-      "Swashbuckle.AspNetCore/6.5.0": {
+      "Swashbuckle.AspNetCore/6.6.2": {
         "type": "package",
         "dependencies": {
           "Microsoft.Extensions.ApiDescription.Server": "6.0.5",
-          "Swashbuckle.AspNetCore.Swagger": "6.5.0",
-          "Swashbuckle.AspNetCore.SwaggerGen": "6.5.0",
-          "Swashbuckle.AspNetCore.SwaggerUI": "6.5.0"
+          "Swashbuckle.AspNetCore.Swagger": "6.6.2",
+          "Swashbuckle.AspNetCore.SwaggerGen": "6.6.2",
+          "Swashbuckle.AspNetCore.SwaggerUI": "6.6.2"
         },
         "build": {
           "build/Swashbuckle.AspNetCore.props": {}
         }
       },
-      "Swashbuckle.AspNetCore.Swagger/6.5.0": {
+      "Swashbuckle.AspNetCore.Swagger/6.6.2": {
         "type": "package",
         "dependencies": {
-          "Microsoft.OpenApi": "1.2.3"
+          "Microsoft.OpenApi": "1.6.14"
         },
         "compile": {
           "lib/net6.0/Swashbuckle.AspNetCore.Swagger.dll": {
@@ -560,10 +617,10 @@
           "Microsoft.AspNetCore.App"
         ]
       },
-      "Swashbuckle.AspNetCore.SwaggerGen/6.5.0": {
+      "Swashbuckle.AspNetCore.SwaggerGen/6.6.2": {
         "type": "package",
         "dependencies": {
-          "Swashbuckle.AspNetCore.Swagger": "6.5.0"
+          "Swashbuckle.AspNetCore.Swagger": "6.6.2"
         },
         "compile": {
           "lib/net6.0/Swashbuckle.AspNetCore.SwaggerGen.dll": {
@@ -576,7 +633,7 @@
           }
         }
       },
-      "Swashbuckle.AspNetCore.SwaggerUI/6.5.0": {
+      "Swashbuckle.AspNetCore.SwaggerUI/6.6.2": {
         "type": "package",
         "compile": {
           "lib/net6.0/Swashbuckle.AspNetCore.SwaggerUI.dll": {
@@ -758,6 +815,22 @@
         },
         "runtime": {
           "lib/netstandard1.3/System.Dynamic.Runtime.dll": {}
+        }
+      },
+      "System.Formats.Asn1/8.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/System.Formats.Asn1.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/System.Formats.Asn1.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0/_._": {}
         }
       },
       "System.Globalization/4.3.0": {
@@ -1275,6 +1348,31 @@
           }
         }
       },
+      "System.Security.Cryptography.Pkcs/8.0.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Formats.Asn1": "8.0.0"
+        },
+        "compile": {
+          "lib/net6.0/System.Security.Cryptography.Pkcs.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/System.Security.Cryptography.Pkcs.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0/_._": {}
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/net6.0/System.Security.Cryptography.Pkcs.dll": {
+            "assetType": "runtime",
+            "rid": "win"
+          }
+        }
+      },
       "System.Security.Cryptography.Primitives/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -1506,18 +1604,38 @@
         "lib/BouncyCastle.Crypto.dll"
       ]
     },
-    "itext7/8.0.0": {
-      "sha512": "HWdCvclpwMXKA2slBzgxKOdCHOUch9+wq0mj5ec3AL46ZDU4j2XbojVB4Zy9j1yecDJdLJeMeD39f7ZPmZ9j5Q==",
+    "BouncyCastle.Cryptography/2.4.0": {
+      "sha512": "SwXsAV3sMvAU/Nn31pbjhWurYSjJ+/giI/0n6tCrYoupEK34iIHCuk3STAd9fx8yudM85KkLSVdn951vTng/vQ==",
       "type": "package",
-      "path": "itext7/8.0.0",
+      "path": "bouncycastle.cryptography/2.4.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "README.md",
+        "bouncycastle.cryptography.2.4.0.nupkg.sha512",
+        "bouncycastle.cryptography.nuspec",
+        "lib/net461/BouncyCastle.Cryptography.dll",
+        "lib/net461/BouncyCastle.Cryptography.xml",
+        "lib/net6.0/BouncyCastle.Cryptography.dll",
+        "lib/net6.0/BouncyCastle.Cryptography.xml",
+        "lib/netstandard2.0/BouncyCastle.Cryptography.dll",
+        "lib/netstandard2.0/BouncyCastle.Cryptography.xml",
+        "packageIcon.png"
+      ]
+    },
+    "itext/8.0.4": {
+      "sha512": "k2dSmNbDAUmlXseGDjYL0d4h8gn5uAeFIVoEyS2zP3YT2t+AjZMtKb1rY4DgSS7lGn0TuAn9dez0fSemdlnsXQ==",
+      "type": "package",
+      "path": "itext/8.0.4",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "ITSC-avatar.png",
         "LICENSE.md",
         "gnu-agpl-v3.0.md",
-        "itext7.8.0.0.nupkg.sha512",
-        "itext7.nuspec",
+        "itext.8.0.4.nupkg.sha512",
+        "itext.nuspec",
         "lib/net461/itext.barcodes.dll",
         "lib/net461/itext.barcodes.xml",
         "lib/net461/itext.bouncy-castle-connector.dll",
@@ -1532,6 +1650,8 @@
         "lib/net461/itext.layout.xml",
         "lib/net461/itext.pdfa.dll",
         "lib/net461/itext.pdfa.xml",
+        "lib/net461/itext.pdfua.dll",
+        "lib/net461/itext.pdfua.xml",
         "lib/net461/itext.sign.dll",
         "lib/net461/itext.sign.xml",
         "lib/net461/itext.styledxmlparser.dll",
@@ -1552,6 +1672,8 @@
         "lib/netstandard2.0/itext.layout.xml",
         "lib/netstandard2.0/itext.pdfa.dll",
         "lib/netstandard2.0/itext.pdfa.xml",
+        "lib/netstandard2.0/itext.pdfua.dll",
+        "lib/netstandard2.0/itext.pdfua.xml",
         "lib/netstandard2.0/itext.sign.dll",
         "lib/netstandard2.0/itext.sign.xml",
         "lib/netstandard2.0/itext.styledxmlparser.dll",
@@ -1560,52 +1682,138 @@
         "lib/netstandard2.0/itext.svg.xml"
       ]
     },
-    "itext7.bouncy-castle-adapter/8.0.0": {
-      "sha512": "FmsestXaCqnWiHgeGIcs1DL5FpQdwXZJN/+tAZWPHlCPE1rLSPCLaGv5gAW7wlPqdF86I81PLQN5YDedDTsRkQ==",
+    "itext.bouncy-castle-adapter/8.0.4": {
+      "sha512": "uNc3tEfF/4+gNfNBlIuy4zTsrtAy/un+DZzXJeDODM4o9kNTawBQ7AeChfjMKg9C9aNMa3kky8LeTkbXo0LOFQ==",
       "type": "package",
-      "path": "itext7.bouncy-castle-adapter/8.0.0",
+      "path": "itext.bouncy-castle-adapter/8.0.4",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "ITSC-avatar.png",
-        "itext7.bouncy-castle-adapter.8.0.0.nupkg.sha512",
-        "itext7.bouncy-castle-adapter.nuspec",
+        "itext.bouncy-castle-adapter.8.0.4.nupkg.sha512",
+        "itext.bouncy-castle-adapter.nuspec",
         "lib/net461/itext.bouncy-castle-adapter.dll",
         "lib/net461/itext.bouncy-castle-adapter.xml",
         "lib/netstandard2.0/itext.bouncy-castle-adapter.dll",
         "lib/netstandard2.0/itext.bouncy-castle-adapter.xml"
       ]
     },
-    "itext7.bouncy-castle-fips-adapter/8.0.0": {
-      "sha512": "KESbFmAEfPTiPyyHzgKzO1Emfk+qLY8KPJd2gx39Z4TVz7xFc7S/9Lia1MELoBBYTSIs/DvgJNMdzb70GtXrRA==",
+    "itext.bouncy-castle-fips-adapter/8.0.4": {
+      "sha512": "9MbXvebKrWVSLqD6pn9tR1mf+vndkyjKqlbs6erc6t3c/XIriAPZJii1DvOqKFqPrOiXd4BzLAoPc7K/r8nzIQ==",
       "type": "package",
-      "path": "itext7.bouncy-castle-fips-adapter/8.0.0",
+      "path": "itext.bouncy-castle-fips-adapter/8.0.4",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "ITSC-avatar.png",
-        "itext7.bouncy-castle-fips-adapter.8.0.0.nupkg.sha512",
-        "itext7.bouncy-castle-fips-adapter.nuspec",
+        "itext.bouncy-castle-fips-adapter.8.0.4.nupkg.sha512",
+        "itext.bouncy-castle-fips-adapter.nuspec",
         "lib/netstandard2.0/bc-fips-1.0.2.dll",
         "lib/netstandard2.0/bcpkix-fips-1.0.2.dll",
         "lib/netstandard2.0/itext.bouncy-castle-fips-adapter.dll",
         "lib/netstandard2.0/itext.bouncy-castle-fips-adapter.xml"
       ]
     },
-    "itext7.commons/8.0.0": {
-      "sha512": "YPraDCzJKy+xX79WkHd0FevrTtbRmHyuhF0oS9c7s12Qe+3xlCnWqaPMGQ4batr3aarDU8E4Tquj4idcuJqrWg==",
+    "itext.commons/8.0.4": {
+      "sha512": "+76EQpGCj1gw17/zD6DaFumWXj9S+ko40wxNny+/3nW7PmrMZd6R8NJHvE1HVHo0xr2Ibx1JL71REYjIYTKFCQ==",
       "type": "package",
-      "path": "itext7.commons/8.0.0",
+      "path": "itext.commons/8.0.4",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "ITSC-avatar.png",
-        "itext7.commons.8.0.0.nupkg.sha512",
-        "itext7.commons.nuspec",
+        "itext.commons.8.0.4.nupkg.sha512",
+        "itext.commons.nuspec",
         "lib/net461/itext.commons.dll",
         "lib/net461/itext.commons.xml",
         "lib/netstandard2.0/itext.commons.dll",
         "lib/netstandard2.0/itext.commons.xml"
+      ]
+    },
+    "itext7/8.0.4": {
+      "sha512": "J+eaLBqCSXbk4DPGuuKZPcs02cH7De6xGZ312o87d21MNgSmAQQikDVw5OpcdMiA0GW/YT/VXRjU5cLPa6sh9A==",
+      "type": "package",
+      "path": "itext7/8.0.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "ITSC-avatar.png",
+        "LICENSE.md",
+        "gnu-agpl-v3.0.md",
+        "itext7.8.0.4.nupkg.sha512",
+        "itext7.nuspec"
+      ]
+    },
+    "itext7.bouncy-castle-adapter/8.0.4": {
+      "sha512": "i+VSf2O2sCRW/SQv4KrOK6X7asfPLzxCMBPCsiDA6xHkOYYnoRYReCVcOmNflZiKT9X/KU8TqdmSc2wEcMSyOg==",
+      "type": "package",
+      "path": "itext7.bouncy-castle-adapter/8.0.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "ITSC-avatar.png",
+        "LICENSE.md",
+        "gnu-agpl-v3.0.md",
+        "itext7.bouncy-castle-adapter.8.0.4.nupkg.sha512",
+        "itext7.bouncy-castle-adapter.nuspec"
+      ]
+    },
+    "itext7.bouncy-castle-fips-adapter/8.0.4": {
+      "sha512": "x56LcZjBzNdnq46Wu7L9RsDZb8pvoGKcTBVGqoetMJFJVIByJ6BX1wTR/5lF/kWYTn89NVioyMFgDfwENbjrFg==",
+      "type": "package",
+      "path": "itext7.bouncy-castle-fips-adapter/8.0.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "ITSC-avatar.png",
+        "LICENSE.md",
+        "gnu-agpl-v3.0.md",
+        "itext7.bouncy-castle-fips-adapter.8.0.4.nupkg.sha512",
+        "itext7.bouncy-castle-fips-adapter.nuspec"
+      ]
+    },
+    "MailKit/4.7.0": {
+      "sha512": "NHTD7QXeDwhgwl+l7jM/Ys8qs43r1J6zQ0PvuSBVTj3P2omWibkt+TZquXWmQeqEyAaYtVGOHUhTEhlaT63QDA==",
+      "type": "package",
+      "path": "mailkit/4.7.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "docs/ExchangeOAuth2.md",
+        "docs/FAQ.md",
+        "docs/GMailOAuth2.md",
+        "docs/README.md",
+        "icons/mailkit-50.png",
+        "lib/net462/MailKit.dll",
+        "lib/net462/MailKit.dll.config",
+        "lib/net462/MailKit.pdb",
+        "lib/net462/MailKit.xml",
+        "lib/net47/MailKit.dll",
+        "lib/net47/MailKit.dll.config",
+        "lib/net47/MailKit.pdb",
+        "lib/net47/MailKit.xml",
+        "lib/net48/MailKit.dll",
+        "lib/net48/MailKit.dll.config",
+        "lib/net48/MailKit.pdb",
+        "lib/net48/MailKit.xml",
+        "lib/net6.0/MailKit.dll",
+        "lib/net6.0/MailKit.dll.config",
+        "lib/net6.0/MailKit.pdb",
+        "lib/net6.0/MailKit.xml",
+        "lib/net8.0/MailKit.dll",
+        "lib/net8.0/MailKit.dll.config",
+        "lib/net8.0/MailKit.pdb",
+        "lib/net8.0/MailKit.xml",
+        "lib/netstandard2.0/MailKit.dll",
+        "lib/netstandard2.0/MailKit.dll.config",
+        "lib/netstandard2.0/MailKit.pdb",
+        "lib/netstandard2.0/MailKit.xml",
+        "lib/netstandard2.1/MailKit.dll",
+        "lib/netstandard2.1/MailKit.dll.config",
+        "lib/netstandard2.1/MailKit.pdb",
+        "lib/netstandard2.1/MailKit.xml",
+        "mailkit.4.7.0.nupkg.sha512",
+        "mailkit.nuspec"
       ]
     },
     "Microsoft.DotNet.PlatformAbstractions/1.1.0": {
@@ -2026,20 +2234,18 @@
         "runtime.json"
       ]
     },
-    "Microsoft.OpenApi/1.2.3": {
-      "sha512": "Nug3rO+7Kl5/SBAadzSMAVgqDlfGjJZ0GenQrLywJ84XGKO0uRqkunz5Wyl0SDwcR71bAATXvSdbdzPrYRYKGw==",
+    "Microsoft.OpenApi/1.6.14": {
+      "sha512": "tTaBT8qjk3xINfESyOPE2rIellPvB7qpVqiWiyA/lACVvz+xOGiXhFUfohcx82NLbi5avzLW0lx+s6oAqQijfw==",
       "type": "package",
-      "path": "microsoft.openapi/1.2.3",
+      "path": "microsoft.openapi/1.6.14",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "lib/net46/Microsoft.OpenApi.dll",
-        "lib/net46/Microsoft.OpenApi.pdb",
-        "lib/net46/Microsoft.OpenApi.xml",
+        "README.md",
         "lib/netstandard2.0/Microsoft.OpenApi.dll",
         "lib/netstandard2.0/Microsoft.OpenApi.pdb",
         "lib/netstandard2.0/Microsoft.OpenApi.xml",
-        "microsoft.openapi.1.2.3.nupkg.sha512",
+        "microsoft.openapi.1.6.14.nupkg.sha512",
         "microsoft.openapi.nuspec"
       ]
     },
@@ -2111,6 +2317,48 @@
         "runtimes/win/lib/netstandard1.3/Microsoft.Win32.Registry.dll"
       ]
     },
+    "MimeKit/4.7.0": {
+      "sha512": "VDqnKACvUiNo5eQshOqB1XzmQROkCSJRkmPu6zj/JqKIn3PID2TtnWGHN5YjkhlLIB7x8MwkXYG6iPLDfiYdcQ==",
+      "type": "package",
+      "path": "mimekit/4.7.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "docs/FAQ.md",
+        "docs/README.md",
+        "icons/mimekit-50.png",
+        "lib/net462/MimeKit.dll",
+        "lib/net462/MimeKit.dll.config",
+        "lib/net462/MimeKit.pdb",
+        "lib/net462/MimeKit.xml",
+        "lib/net47/MimeKit.dll",
+        "lib/net47/MimeKit.dll.config",
+        "lib/net47/MimeKit.pdb",
+        "lib/net47/MimeKit.xml",
+        "lib/net48/MimeKit.dll",
+        "lib/net48/MimeKit.dll.config",
+        "lib/net48/MimeKit.pdb",
+        "lib/net48/MimeKit.xml",
+        "lib/net6.0/MimeKit.dll",
+        "lib/net6.0/MimeKit.dll.config",
+        "lib/net6.0/MimeKit.pdb",
+        "lib/net6.0/MimeKit.xml",
+        "lib/net8.0/MimeKit.dll",
+        "lib/net8.0/MimeKit.dll.config",
+        "lib/net8.0/MimeKit.pdb",
+        "lib/net8.0/MimeKit.xml",
+        "lib/netstandard2.0/MimeKit.dll",
+        "lib/netstandard2.0/MimeKit.dll.config",
+        "lib/netstandard2.0/MimeKit.pdb",
+        "lib/netstandard2.0/MimeKit.xml",
+        "lib/netstandard2.1/MimeKit.dll",
+        "lib/netstandard2.1/MimeKit.dll.config",
+        "lib/netstandard2.1/MimeKit.pdb",
+        "lib/netstandard2.1/MimeKit.xml",
+        "mimekit.4.7.0.nupkg.sha512",
+        "mimekit.nuspec"
+      ]
+    },
     "Newtonsoft.Json/13.0.1": {
       "sha512": "ppPFpBcvxdsfUonNcvITKqLl3bqxWbDCZIzDWHzjpdAHRFfZe0Dw9HmA0+za13IdyrgJwpkDTDA9fHaxOrt20A==",
       "type": "package",
@@ -2136,21 +2384,6 @@
         "newtonsoft.json.13.0.1.nupkg.sha512",
         "newtonsoft.json.nuspec",
         "packageIcon.png"
-      ]
-    },
-    "Portable.BouncyCastle/1.8.10": {
-      "sha512": "XLhjNAwuVB9ynwn11l5K44eyozh8q6gFseTrlnLNttejimglX7+F9+vxh60LPjvA/DAt6fUdS43N3ah8K6eaWg==",
-      "type": "package",
-      "path": "portable.bouncycastle/1.8.10",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/net40/BouncyCastle.Crypto.dll",
-        "lib/net40/BouncyCastle.Crypto.xml",
-        "lib/netstandard2.0/BouncyCastle.Crypto.dll",
-        "lib/netstandard2.0/BouncyCastle.Crypto.xml",
-        "portable.bouncycastle.1.8.10.nupkg.sha512",
-        "portable.bouncycastle.nuspec"
       ]
     },
     "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
@@ -2349,22 +2582,22 @@
         "runtimes/ubuntu.16.10-x64/native/System.Security.Cryptography.Native.OpenSsl.so"
       ]
     },
-    "Swashbuckle.AspNetCore/6.5.0": {
-      "sha512": "FK05XokgjgwlCI6wCT+D4/abtQkL1X1/B9Oas6uIwHFmYrIO9WUD5aLC9IzMs9GnHfUXOtXZ2S43gN1mhs5+aA==",
+    "Swashbuckle.AspNetCore/6.6.2": {
+      "sha512": "+NB4UYVYN6AhDSjW0IJAd1AGD8V33gemFNLPaxKTtPkHB+HaKAKf9MGAEUPivEWvqeQfcKIw8lJaHq6LHljRuw==",
       "type": "package",
-      "path": "swashbuckle.aspnetcore/6.5.0",
+      "path": "swashbuckle.aspnetcore/6.6.2",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "build/Swashbuckle.AspNetCore.props",
-        "swashbuckle.aspnetcore.6.5.0.nupkg.sha512",
+        "swashbuckle.aspnetcore.6.6.2.nupkg.sha512",
         "swashbuckle.aspnetcore.nuspec"
       ]
     },
-    "Swashbuckle.AspNetCore.Swagger/6.5.0": {
-      "sha512": "XWmCmqyFmoItXKFsQSwQbEAsjDKcxlNf1l+/Ki42hcb6LjKL8m5Db69OTvz5vLonMSRntYO1XLqz0OP+n3vKnA==",
+    "Swashbuckle.AspNetCore.Swagger/6.6.2": {
+      "sha512": "ovgPTSYX83UrQUWiS5vzDcJ8TEX1MAxBgDFMK45rC24MorHEPQlZAHlaXj/yth4Zf6xcktpUgTEBvffRQVwDKA==",
       "type": "package",
-      "path": "swashbuckle.aspnetcore.swagger/6.5.0",
+      "path": "swashbuckle.aspnetcore.swagger/6.6.2",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2377,20 +2610,24 @@
         "lib/net7.0/Swashbuckle.AspNetCore.Swagger.dll",
         "lib/net7.0/Swashbuckle.AspNetCore.Swagger.pdb",
         "lib/net7.0/Swashbuckle.AspNetCore.Swagger.xml",
+        "lib/net8.0/Swashbuckle.AspNetCore.Swagger.dll",
+        "lib/net8.0/Swashbuckle.AspNetCore.Swagger.pdb",
+        "lib/net8.0/Swashbuckle.AspNetCore.Swagger.xml",
         "lib/netcoreapp3.0/Swashbuckle.AspNetCore.Swagger.dll",
         "lib/netcoreapp3.0/Swashbuckle.AspNetCore.Swagger.pdb",
         "lib/netcoreapp3.0/Swashbuckle.AspNetCore.Swagger.xml",
         "lib/netstandard2.0/Swashbuckle.AspNetCore.Swagger.dll",
         "lib/netstandard2.0/Swashbuckle.AspNetCore.Swagger.pdb",
         "lib/netstandard2.0/Swashbuckle.AspNetCore.Swagger.xml",
-        "swashbuckle.aspnetcore.swagger.6.5.0.nupkg.sha512",
+        "package-readme.md",
+        "swashbuckle.aspnetcore.swagger.6.6.2.nupkg.sha512",
         "swashbuckle.aspnetcore.swagger.nuspec"
       ]
     },
-    "Swashbuckle.AspNetCore.SwaggerGen/6.5.0": {
-      "sha512": "Y/qW8Qdg9OEs7V013tt+94OdPxbRdbhcEbw4NiwGvf4YBcfhL/y7qp/Mjv/cENsQ2L3NqJ2AOu94weBy/h4KvA==",
+    "Swashbuckle.AspNetCore.SwaggerGen/6.6.2": {
+      "sha512": "zv4ikn4AT1VYuOsDCpktLq4QDq08e7Utzbir86M5/ZkRaLXbCPF11E1/vTmOiDzRTl0zTZINQU2qLKwTcHgfrA==",
       "type": "package",
-      "path": "swashbuckle.aspnetcore.swaggergen/6.5.0",
+      "path": "swashbuckle.aspnetcore.swaggergen/6.6.2",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2403,20 +2640,24 @@
         "lib/net7.0/Swashbuckle.AspNetCore.SwaggerGen.dll",
         "lib/net7.0/Swashbuckle.AspNetCore.SwaggerGen.pdb",
         "lib/net7.0/Swashbuckle.AspNetCore.SwaggerGen.xml",
+        "lib/net8.0/Swashbuckle.AspNetCore.SwaggerGen.dll",
+        "lib/net8.0/Swashbuckle.AspNetCore.SwaggerGen.pdb",
+        "lib/net8.0/Swashbuckle.AspNetCore.SwaggerGen.xml",
         "lib/netcoreapp3.0/Swashbuckle.AspNetCore.SwaggerGen.dll",
         "lib/netcoreapp3.0/Swashbuckle.AspNetCore.SwaggerGen.pdb",
         "lib/netcoreapp3.0/Swashbuckle.AspNetCore.SwaggerGen.xml",
         "lib/netstandard2.0/Swashbuckle.AspNetCore.SwaggerGen.dll",
         "lib/netstandard2.0/Swashbuckle.AspNetCore.SwaggerGen.pdb",
         "lib/netstandard2.0/Swashbuckle.AspNetCore.SwaggerGen.xml",
-        "swashbuckle.aspnetcore.swaggergen.6.5.0.nupkg.sha512",
+        "package-readme.md",
+        "swashbuckle.aspnetcore.swaggergen.6.6.2.nupkg.sha512",
         "swashbuckle.aspnetcore.swaggergen.nuspec"
       ]
     },
-    "Swashbuckle.AspNetCore.SwaggerUI/6.5.0": {
-      "sha512": "OvbvxX+wL8skxTBttcBsVxdh73Fag4xwqEU2edh4JMn7Ws/xJHnY/JB1e9RoCb6XpDxUF3hD9A0Z1lEUx40Pfw==",
+    "Swashbuckle.AspNetCore.SwaggerUI/6.6.2": {
+      "sha512": "mBBb+/8Hm2Q3Wygag+hu2jj69tZW5psuv0vMRXY07Wy+Rrj40vRP8ZTbKBhs91r45/HXT4aY4z0iSBYx1h6JvA==",
       "type": "package",
-      "path": "swashbuckle.aspnetcore.swaggerui/6.5.0",
+      "path": "swashbuckle.aspnetcore.swaggerui/6.6.2",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2429,13 +2670,17 @@
         "lib/net7.0/Swashbuckle.AspNetCore.SwaggerUI.dll",
         "lib/net7.0/Swashbuckle.AspNetCore.SwaggerUI.pdb",
         "lib/net7.0/Swashbuckle.AspNetCore.SwaggerUI.xml",
+        "lib/net8.0/Swashbuckle.AspNetCore.SwaggerUI.dll",
+        "lib/net8.0/Swashbuckle.AspNetCore.SwaggerUI.pdb",
+        "lib/net8.0/Swashbuckle.AspNetCore.SwaggerUI.xml",
         "lib/netcoreapp3.0/Swashbuckle.AspNetCore.SwaggerUI.dll",
         "lib/netcoreapp3.0/Swashbuckle.AspNetCore.SwaggerUI.pdb",
         "lib/netcoreapp3.0/Swashbuckle.AspNetCore.SwaggerUI.xml",
         "lib/netstandard2.0/Swashbuckle.AspNetCore.SwaggerUI.dll",
         "lib/netstandard2.0/Swashbuckle.AspNetCore.SwaggerUI.pdb",
         "lib/netstandard2.0/Swashbuckle.AspNetCore.SwaggerUI.xml",
-        "swashbuckle.aspnetcore.swaggerui.6.5.0.nupkg.sha512",
+        "package-readme.md",
+        "swashbuckle.aspnetcore.swaggerui.6.6.2.nupkg.sha512",
         "swashbuckle.aspnetcore.swaggerui.nuspec"
       ]
     },
@@ -2953,6 +3198,35 @@
         "runtimes/aot/lib/netcore50/System.Dynamic.Runtime.dll",
         "system.dynamic.runtime.4.0.11.nupkg.sha512",
         "system.dynamic.runtime.nuspec"
+      ]
+    },
+    "System.Formats.Asn1/8.0.0": {
+      "sha512": "AJukBuLoe3QeAF+mfaRKQb2dgyrvt340iMBHYv+VdBzCUM06IxGlvl0o/uPOS7lHnXPN6u8fFRHSHudx5aTi8w==",
+      "type": "package",
+      "path": "system.formats.asn1/8.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/System.Formats.Asn1.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net6.0/_._",
+        "buildTransitive/netcoreapp2.0/System.Formats.Asn1.targets",
+        "lib/net462/System.Formats.Asn1.dll",
+        "lib/net462/System.Formats.Asn1.xml",
+        "lib/net6.0/System.Formats.Asn1.dll",
+        "lib/net6.0/System.Formats.Asn1.xml",
+        "lib/net7.0/System.Formats.Asn1.dll",
+        "lib/net7.0/System.Formats.Asn1.xml",
+        "lib/net8.0/System.Formats.Asn1.dll",
+        "lib/net8.0/System.Formats.Asn1.xml",
+        "lib/netstandard2.0/System.Formats.Asn1.dll",
+        "lib/netstandard2.0/System.Formats.Asn1.xml",
+        "system.formats.asn1.8.0.0.nupkg.sha512",
+        "system.formats.asn1.nuspec",
+        "useSharedDesignerContext.txt"
       ]
     },
     "System.Globalization/4.3.0": {
@@ -4494,6 +4768,43 @@
         "system.security.cryptography.encoding.nuspec"
       ]
     },
+    "System.Security.Cryptography.Pkcs/8.0.0": {
+      "sha512": "ULmp3xoOwNYjOYp4JZ2NK/6NdTgiN1GQXzVVN1njQ7LOZ0d0B9vyMnhyqbIi9Qw4JXj1JgCsitkTShboHRx7Eg==",
+      "type": "package",
+      "path": "system.security.cryptography.pkcs/8.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/System.Security.Cryptography.Pkcs.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net6.0/_._",
+        "buildTransitive/netcoreapp2.0/System.Security.Cryptography.Pkcs.targets",
+        "lib/net462/System.Security.Cryptography.Pkcs.dll",
+        "lib/net462/System.Security.Cryptography.Pkcs.xml",
+        "lib/net6.0/System.Security.Cryptography.Pkcs.dll",
+        "lib/net6.0/System.Security.Cryptography.Pkcs.xml",
+        "lib/net7.0/System.Security.Cryptography.Pkcs.dll",
+        "lib/net7.0/System.Security.Cryptography.Pkcs.xml",
+        "lib/net8.0/System.Security.Cryptography.Pkcs.dll",
+        "lib/net8.0/System.Security.Cryptography.Pkcs.xml",
+        "lib/netstandard2.0/System.Security.Cryptography.Pkcs.dll",
+        "lib/netstandard2.0/System.Security.Cryptography.Pkcs.xml",
+        "lib/netstandard2.1/System.Security.Cryptography.Pkcs.dll",
+        "lib/netstandard2.1/System.Security.Cryptography.Pkcs.xml",
+        "runtimes/win/lib/net6.0/System.Security.Cryptography.Pkcs.dll",
+        "runtimes/win/lib/net6.0/System.Security.Cryptography.Pkcs.xml",
+        "runtimes/win/lib/net7.0/System.Security.Cryptography.Pkcs.dll",
+        "runtimes/win/lib/net7.0/System.Security.Cryptography.Pkcs.xml",
+        "runtimes/win/lib/net8.0/System.Security.Cryptography.Pkcs.dll",
+        "runtimes/win/lib/net8.0/System.Security.Cryptography.Pkcs.xml",
+        "system.security.cryptography.pkcs.8.0.0.nupkg.sha512",
+        "system.security.cryptography.pkcs.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
     "System.Security.Cryptography.Primitives/4.3.0": {
       "sha512": "7bDIyVFNL/xKeFHjhobUAQqSpJq9YTOpbEs6mR233Et01STBMXNAc/V+BM6dwYGc95gVh/Zf+iVXWzj3mE8DWg==",
       "type": "package",
@@ -5133,10 +5444,11 @@
   "projectFileDependencyGroups": {
     "net6.0": [
       "BouncyCastle >= 1.8.9",
-      "Swashbuckle.AspNetCore >= 6.5.0",
-      "itext7 >= 8.0.0",
-      "itext7.bouncy-castle-adapter >= 8.0.0",
-      "itext7.bouncy-castle-fips-adapter >= 8.0.0"
+      "MailKit >= 4.7.0",
+      "Swashbuckle.AspNetCore >= 6.6.2",
+      "itext7 >= 8.0.4",
+      "itext7.bouncy-castle-adapter >= 8.0.4",
+      "itext7.bouncy-castle-fips-adapter >= 8.0.4"
     ]
   },
   "packageFolders": {
@@ -5146,11 +5458,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ryans\\Source\\Repos\\SwedenButtonBitPayRoll\\SwedenBttnBit\\SwedenBttnBit.csproj",
+      "projectUniqueName": "C:\\Users\\ryans\\source\\repos\\testing2sweden\\SwedenBttnBit\\SwedenBttnBit.csproj",
       "projectName": "SwedenBttnBit",
-      "projectPath": "C:\\Users\\ryans\\Source\\Repos\\SwedenButtonBitPayRoll\\SwedenBttnBit\\SwedenBttnBit.csproj",
+      "projectPath": "C:\\Users\\ryans\\source\\repos\\testing2sweden\\SwedenBttnBit\\SwedenBttnBit.csproj",
       "packagesPath": "C:\\Users\\ryans\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ryans\\Source\\Repos\\SwedenButtonBitPayRoll\\SwedenBttnBit\\obj\\",
+      "outputPath": "C:\\Users\\ryans\\source\\repos\\testing2sweden\\SwedenBttnBit\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -5165,7 +5477,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\sdk\\7.0.304\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -5178,6 +5490,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -5188,21 +5505,25 @@
             "target": "Package",
             "version": "[1.8.9, )"
           },
+          "MailKit": {
+            "target": "Package",
+            "version": "[4.7.0, )"
+          },
           "Swashbuckle.AspNetCore": {
             "target": "Package",
-            "version": "[6.5.0, )"
+            "version": "[6.6.2, )"
           },
           "itext7": {
             "target": "Package",
-            "version": "[8.0.0, )"
+            "version": "[8.0.4, )"
           },
           "itext7.bouncy-castle-adapter": {
             "target": "Package",
-            "version": "[8.0.0, )"
+            "version": "[8.0.4, )"
           },
           "itext7.bouncy-castle-fips-adapter": {
             "target": "Package",
-            "version": "[8.0.0, )"
+            "version": "[8.0.4, )"
           }
         },
         "imports": [
@@ -5224,11 +5545,41 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.203\\RuntimeIdentifierGraph.json"
       }
     }
   },
   "logs": [
+    {
+      "code": "NU1902",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'BouncyCastle' 1.8.9 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-8xfc-gm6g-vgpv",
+      "libraryId": "BouncyCastle",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    },
+    {
+      "code": "NU1902",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'BouncyCastle' 1.8.9 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-m44j-cfrm-g8qc",
+      "libraryId": "BouncyCastle",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    },
+    {
+      "code": "NU1902",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'BouncyCastle' 1.8.9 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-v435-xc8x-wvr9",
+      "libraryId": "BouncyCastle",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    },
     {
       "code": "NU1701",
       "level": "Warning",
