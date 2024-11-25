@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SwedenBttnBit")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+469d180a7674d1bbfd67fdb26c7bf170dfa38e40")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e45f577bb0c031949b8414fa76e259214b558e7e")]
 [assembly: System.Reflection.AssemblyProductAttribute("SwedenBttnBit")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SwedenBttnBit")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

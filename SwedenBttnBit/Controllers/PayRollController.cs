@@ -17,6 +17,7 @@ using System.Net;
 using System.Net.Mail;
 using MimeKit.Utils;
 using static iText.Kernel.Pdf.Colorspace.PdfDeviceCs;
+using System.Globalization;
 
 
 namespace SwedenBttnBit.Controllers
@@ -221,22 +222,37 @@ namespace SwedenBttnBit.Controllers
             document.Close();
             byte[] file = memoryStream.ToArray();
 
-            SendEmailWithAttachment("ryansweden123@gmail.com", "Payroll", "Payroll", file, namefile);
+
+            string[] mails = new string[]
+            {
+                "ryansweden123@gmail.com",
+                "jessy_fhon@hotmail.com"
+            };
+
+
+            string currentMonth = DateTime.Now.ToString("MMMM", new CultureInfo("es-ES"));
+            SendEmailWithAttachment(mails, $"Payroll for {currentMonth}", $"Payroll details for {currentMonth}", file, namefile);
 
 
             return File(file, "application/pdf", namefile);
 
         }
-        private void SendEmailWithAttachment(string toEmail, string subject, string body, byte[] fileContent, string fileName)
+        private void SendEmailWithAttachment(string[] toEmails, string subject, string body, byte[] fileContent, string fileName)
         {
             var message = new MimeMessage();
             message.From.Add(new MailboxAddress("Sweden Billing System", _smtpSettings.Username));
-            message.To.Add(new MailboxAddress("", toEmail));
+
+            foreach (var toEmail in toEmails)
+            {
+                message.To.Add(new MailboxAddress("", toEmail));
+            }
+
+            message.Cc.Add(new MailboxAddress("", "jessy_fhon@hotmail.com"));
+
             message.Subject = subject;
 
             var builder = new BodyBuilder { TextBody = body };
 
-            // Crear la instancia de ContentDisposition
             var attachment = builder.Attachments.Add(fileName, fileContent);
             attachment.ContentDisposition = new ContentDisposition(ContentDisposition.Attachment);
 
@@ -251,5 +267,6 @@ namespace SwedenBttnBit.Controllers
                 client.Disconnect(true);
             }
         }
+
     }
 }
