@@ -1,0 +1,16 @@
+body { font-family: system-ui, sans-serif; margin: 2rem; color: #1f2937; }
+h1 { font-size: 1.4rem; margin-bottom: 1rem; }
+.layout { display: flex; gap: 2rem; align-items: flex-start; flex-wrap: wrap; }
+.panel { background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 8px; padding: 1.2rem; }
+#payroll-form { flex: 2; min-width: 380px; }
+#payroll-form fieldset { border: 1px solid #e5e7eb; border-radius: 6px; margin-bottom: 1rem; padding: 0.8rem 1rem; }
+#payroll-form label { display: block; margin-bottom: 0.6rem; font-size: 0.85rem; color: #374151; }
+#payroll-form input { display: block; width: 100%; margin-top: 0.2rem; padding: 0.4rem; border: 1px solid #d1d5db; border-radius: 4px; box-sizing: border-box; }
+#products-table { width: 100%; border-collapse: collapse; margin-bottom: 0.6rem; }
+#products-table th, #products-table td { padding: 0.3rem; text-align: left; }
+#products-table input { width: 100%; box-sizing: border-box; }
+#generate-btn { background: #111827; color: white; border: none; padding: 0.6rem 1.2rem; border-radius: 6px; cursor: pointer; }
+section.panel { flex: 1; min-width: 280px; }
+#history-list { list-style: none; padding: 0; margin: 0; }
+#history-list li { border-bottom: 1px solid #e5e7eb; padding: 0.5rem 0; font-size: 0.85rem; }
+.badge-final { background: #16a34a; color: white; border-radius: 4px; padding: 0.1rem 0.4rem; font-size: 0.7rem; margin-left: 0.4rem; }

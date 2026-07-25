@@ -1,4 +1,4 @@
-﻿using iText.IO.Font;
+using iText.IO.Font;
 using iText.Kernel.Colors;
 using iText.Kernel.Font;
 using iText.Kernel.Geom;
@@ -11,6 +11,7 @@ using MailKit.Net.Smtp;
 using Microsoft.AspNetCore.Mvc;
 using MimeKit;
 using SwedenBttnBit.Domain;
+using SwedenBttnBit.Services;
 using System.Globalization;
 
 namespace SwedenBttnBit.Controllers
@@ -20,10 +21,38 @@ namespace SwedenBttnBit.Controllers
     public class PayRollController : Controller
     {
         private readonly SmtpSettings _smtpSettings;
+        private readonly IPayRollHistoryStore _historyStore;
+        private readonly IGuidePdfArchive _pdfArchive;
 
-        public PayRollController(IConfiguration configuration)
+        public PayRollController(IConfiguration configuration, IPayRollHistoryStore historyStore, IGuidePdfArchive pdfArchive)
         {
             _smtpSettings = configuration.GetSection("SmtpSettings").Get<SmtpSettings>()!;
+            _historyStore = historyStore;
+            _pdfArchive = pdfArchive;
+        }
+
+        [HttpGet("history")]
+        public IActionResult GetHistory()
+        {
+            return Ok(_historyStore.GetAll());
+        }
+
+        [HttpPost("history/{id}/final")]
+        public IActionResult MarkFinal(string id)
+        {
+            return _historyStore.MarkFinal(id) ? NoContent() : NotFound();
+        }
+
+        [HttpGet("history/{id}/pdf")]
+        public IActionResult GetHistoryPdf(string id)
+        {
+            var entry = _historyStore.GetById(id);
+            if (entry == null) return NotFound();
+
+            var fullPath = _pdfArchive.GetFullPath(entry.PdfRelativePath);
+            if (!System.IO.File.Exists(fullPath)) return NotFound();
+
+            return File(System.IO.File.ReadAllBytes(fullPath), "application/pdf");
         }
 
         [HttpPost("get-payroll")]
@@ -460,6 +489,17 @@ namespace SwedenBttnBit.Controllers
             document.Close();
 
             byte[] file = memoryStream.ToArray();
+
+            // Guardado del historial: best-effort, no debe bloquear la respuesta del PDF.
+            try
+            {
+                var entryId = Guid.NewGuid().ToString("N");
+                var relativePath = _pdfArchive.Save(file, payroll, entryId);
+                _historyStore.Add(entryId, payroll, relativePath);
+            }
+            catch
+            {
+            }
 
             // Email (opcional; lo dejo igual que tu código)
             string[] mails = new string[]

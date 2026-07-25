@@ -1,4 +1,4 @@
-﻿namespace SwedenBttnBit.Domain
+namespace SwedenBttnBit.Domain
 {
     public class PayRoll
     {
