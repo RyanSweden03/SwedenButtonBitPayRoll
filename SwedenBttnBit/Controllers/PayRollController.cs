@@ -12,6 +12,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using MimeKit;
 using SwedenBttnBit.Domain;
+using SwedenBttnBit.Services;
 using System.IO;
 using System.Net;
 using System.Net.Mail;
@@ -25,9 +26,12 @@ namespace SwedenBttnBit.Controllers
     public class PayRollController : Controller
     {
         private readonly SmtpSettings _smtpSettings;
-        public PayRollController(IConfiguration configuration)
+        private readonly IPayRollHistoryStore _historyStore;
+
+        public PayRollController(IConfiguration configuration, IPayRollHistoryStore historyStore)
         {
             _smtpSettings = configuration.GetSection("SmtpSettings").Get<SmtpSettings>();
+            _historyStore = historyStore;
         }
 
         [HttpPost("get-payroll")]
@@ -266,6 +270,12 @@ namespace SwedenBttnBit.Controllers
                 client.Send(message);
                 client.Disconnect(true);
             }
+        }
+
+        [HttpGet("history")]
+        public IActionResult GetHistory()
+        {
+            return Ok(_historyStore.GetAll());
         }
 
     }
