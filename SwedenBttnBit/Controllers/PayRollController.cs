@@ -22,11 +22,13 @@ namespace SwedenBttnBit.Controllers
     {
         private readonly SmtpSettings _smtpSettings;
         private readonly IPayRollHistoryStore _historyStore;
+        private readonly IGuidePdfArchive _pdfArchive;
 
-        public PayRollController(IConfiguration configuration, IPayRollHistoryStore historyStore)
+        public PayRollController(IConfiguration configuration, IPayRollHistoryStore historyStore, IGuidePdfArchive pdfArchive)
         {
             _smtpSettings = configuration.GetSection("SmtpSettings").Get<SmtpSettings>()!;
             _historyStore = historyStore;
+            _pdfArchive = pdfArchive;
         }
 
         [HttpGet("history")]
@@ -469,6 +471,17 @@ namespace SwedenBttnBit.Controllers
             document.Close();
 
             byte[] file = memoryStream.ToArray();
+
+            // Guardado del historial: best-effort, no debe bloquear la respuesta del PDF.
+            try
+            {
+                var entryId = Guid.NewGuid().ToString("N");
+                var relativePath = _pdfArchive.Save(file, payroll, entryId);
+                _historyStore.Add(entryId, payroll, relativePath);
+            }
+            catch
+            {
+            }
 
             // Email (opcional; lo dejo igual que tu código)
             string[] mails = new string[]
