@@ -37,6 +37,24 @@ namespace SwedenBttnBit.Controllers
             return Ok(_historyStore.GetAll());
         }
 
+        [HttpPost("history/{id}/final")]
+        public IActionResult MarkFinal(string id)
+        {
+            return _historyStore.MarkFinal(id) ? NoContent() : NotFound();
+        }
+
+        [HttpGet("history/{id}/pdf")]
+        public IActionResult GetHistoryPdf(string id)
+        {
+            var entry = _historyStore.GetById(id);
+            if (entry == null) return NotFound();
+
+            var fullPath = _pdfArchive.GetFullPath(entry.PdfRelativePath);
+            if (!System.IO.File.Exists(fullPath)) return NotFound();
+
+            return File(System.IO.File.ReadAllBytes(fullPath), "application/pdf");
+        }
+
         [HttpPost("get-payroll")]
         public IActionResult GeneratePDF([FromBody] PayRoll payroll)
         {
