@@ -49,7 +49,7 @@ namespace SwedenBttnBit.Services
                 var entry = new PayRollHistoryEntry
                 {
                     Id = id,
-                    GuideNumber = payload.GuideNumber.ToString(),
+                    GuideNumber = payload.GuideNumber ?? string.Empty,
                     CreatedAt = DateTime.Now,
                     IsFinal = false,
                     PdfRelativePath = pdfRelativePath,
