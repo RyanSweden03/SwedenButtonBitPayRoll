@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Generar Guía de Pago</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <h1>Generar Guía de Pago</h1>
+
+  <div class="layout">
+    <form id="payroll-form" class="panel">
+      <fieldset>
+        <legend>Cliente</legend>
+        <label>Razón social
+          <input type="text" id="destinatary" required />
+        </label>
+        <label>Dirección
+          <input type="text" id="destinataryAddress" required />
+        </label>
+        <label>Distrito
+          <input type="text" id="destinataryDistrict" required />
+        </label>
+        <label>RUC
+          <input type="number" id="destinataryRUC" required />
+        </label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Guía</legend>
+        <label>Fecha
+          <input type="date" id="date" required />
+        </label>
+        <label>N&deg; de guía
+          <input type="text" id="guideNumber" placeholder="Sugerido según historial" />
+        </label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Productos</legend>
+        <table id="products-table">
+          <thead>
+            <tr>
+              <th>Descripción</th>
+              <th>Cantidad</th>
+              <th>Precio</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="products-body"></tbody>
+        </table>
+        <button type="button" id="add-product">+ Agregar producto</button>
+      </fieldset>
+
+      <button type="submit" id="generate-btn">Generar PDF</button>
+    </form>
+
+    <section class="panel">
+      <h2>Historial</h2>
+      <ul id="history-list"></ul>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
