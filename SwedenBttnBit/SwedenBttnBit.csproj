@@ -22,6 +22,9 @@
     <None Update="Fonts\Lato-Regular.ttf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="Fonts\Lato-Bold.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Images\LOGO.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
