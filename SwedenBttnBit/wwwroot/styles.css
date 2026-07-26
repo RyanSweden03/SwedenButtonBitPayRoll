@@ -1,16 +1,301 @@
-body { font-family: system-ui, sans-serif; margin: 2rem; color: #1f2937; }
-h1 { font-size: 1.4rem; margin-bottom: 1rem; }
-.layout { display: flex; gap: 2rem; align-items: flex-start; flex-wrap: wrap; }
-.panel { background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 8px; padding: 1.2rem; }
-#payroll-form { flex: 2; min-width: 380px; }
-#payroll-form fieldset { border: 1px solid #e5e7eb; border-radius: 6px; margin-bottom: 1rem; padding: 0.8rem 1rem; }
-#payroll-form label { display: block; margin-bottom: 0.6rem; font-size: 0.85rem; color: #374151; }
-#payroll-form input { display: block; width: 100%; margin-top: 0.2rem; padding: 0.4rem; border: 1px solid #d1d5db; border-radius: 4px; box-sizing: border-box; }
-#products-table { width: 100%; border-collapse: collapse; margin-bottom: 0.6rem; }
-#products-table th, #products-table td { padding: 0.3rem; text-align: left; }
-#products-table input { width: 100%; box-sizing: border-box; }
-#generate-btn { background: #111827; color: white; border: none; padding: 0.6rem 1.2rem; border-radius: 6px; cursor: pointer; }
-section.panel { flex: 1; min-width: 280px; }
-#history-list { list-style: none; padding: 0; margin: 0; }
-#history-list li { border-bottom: 1px solid #e5e7eb; padding: 0.5rem 0; font-size: 0.85rem; }
-.badge-final { background: #16a34a; color: white; border-radius: 4px; padding: 0.1rem 0.4rem; font-size: 0.7rem; margin-left: 0.4rem; }
+@font-face {
+  font-family: "Lato";
+  src: url("fonts/Lato-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Lato";
+  src: url("fonts/Lato-Semibold.ttf") format("truetype");
+  font-weight: 600;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Lato";
+  src: url("fonts/Lato-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Lato";
+  src: url("fonts/Lato-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-display: swap;
+}
+
+:root {
+  --navy: #111827;
+  --navy-soft: #1f2937;
+  --amber: #f59e0b;
+  --amber-dark: #b45309;
+  --success: #15803d;
+  --success-soft: #ecfdf3;
+  --surface: #ffffff;
+  --surface-soft: #f3f4f6;
+  --border: #e5e7eb;
+  --text: #111827;
+  --text-muted: #6b7280;
+  --mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Lato", system-ui, sans-serif;
+  color: var(--text);
+  background: var(--surface-soft);
+  -webkit-font-smoothing: antialiased;
+}
+
+.mono { font-family: var(--mono); font-variant-numeric: tabular-nums; }
+
+/* ===== Topbar ===== */
+.topbar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: var(--navy);
+  color: #fff;
+  padding: 1rem 1.75rem;
+}
+.brand { display: flex; align-items: center; gap: 0.6rem; }
+.brand-mark { width: 30px; height: 30px; flex-shrink: 0; }
+.brand-text { display: flex; flex-direction: column; line-height: 1.05; font-size: 0.72rem; letter-spacing: 0.08em; }
+.brand-text strong { font-weight: 900; font-size: 0.85rem; }
+.brand-text span { color: #9ca3af; text-transform: uppercase; }
+.topbar h1 {
+  margin: 0 0 0 auto;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #e5e7eb;
+}
+
+/* ===== Layout ===== */
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(240px, 300px);
+  gap: 1.5rem;
+  align-items: start;
+  padding: 1.75rem;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  box-shadow: 0 1px 2px rgba(17, 24, 39, 0.04);
+}
+
+.form-card { padding: 1.5rem 1.5rem 1.75rem; }
+
+/* ===== Field groups ===== */
+.field-group {
+  border-top: 1px solid var(--border);
+  padding: 1.25rem 0;
+}
+.field-group:first-child { border-top: none; padding-top: 0; }
+
+.field-group h2 {
+  margin: 0 0 0.9rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.field-group-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.9rem;
+}
+.field-group-header h2 { margin: 0; }
+
+.field-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.9rem 1.2rem;
+}
+.field-grid.two { grid-template-columns: repeat(2, 1fr); max-width: 420px; }
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+input, select, .combobox {
+  font: inherit;
+  font-family: "Lato", system-ui, sans-serif;
+  color: var(--text);
+  padding: 0.55rem 0.65rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--surface);
+}
+input.mono, select.mono { font-family: var(--mono); }
+
+input:focus, select:focus, button:focus-visible {
+  outline: 2px solid var(--amber);
+  outline-offset: 1px;
+  border-color: var(--amber);
+}
+
+/* ===== Combobox / catalog picker ===== */
+.combobox { min-width: 220px; font-weight: 600; }
+
+.catalog-picker { display: flex; gap: 0.5rem; }
+.catalog-picker select { min-width: 260px; }
+
+button {
+  cursor: pointer;
+  font: inherit;
+  font-weight: 700;
+  border-radius: 6px;
+  border: 1px solid transparent;
+}
+
+#add-from-catalog {
+  background: var(--surface-soft);
+  border-color: var(--border);
+  color: var(--navy);
+  padding: 0.5rem 0.9rem;
+}
+#add-from-catalog:hover { background: var(--border); }
+
+/* ===== Document-style product table (mirrors the generated PDF) ===== */
+.table-scroll {
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+.doc-table {
+  width: 100%;
+  min-width: 480px;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+.doc-table thead th {
+  background: var(--navy);
+  color: #fff;
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: 0.6rem 0.7rem;
+  text-align: left;
+}
+.doc-table .col-price, .doc-table .col-qty, .doc-table .col-total { text-align: right; width: 1%; white-space: nowrap; }
+.doc-table .col-remove { width: 1%; }
+.doc-table td { padding: 0.45rem 0.7rem; border-top: 1px solid var(--border); vertical-align: middle; }
+.doc-table tbody tr:nth-child(even) { background: var(--surface-soft); }
+.doc-table tbody input {
+  border: 1px solid transparent;
+  background: transparent;
+  padding: 0.3rem 0.4rem;
+  width: 100%;
+}
+.doc-table tbody input:hover { border-color: var(--border); }
+.doc-table .product-price, .doc-table .product-quantity { text-align: right; width: 4.5rem; }
+.doc-table .row-total { text-align: right; color: var(--text-muted); white-space: nowrap; }
+.doc-table td:nth-child(4) { width: auto; }
+.doc-table .product-description { min-width: 220px; }
+.doc-table tfoot td { padding: 0.6rem 0.7rem; border-top: 2px solid var(--navy); font-weight: 700; }
+.doc-table tfoot .col-total { color: var(--navy); }
+
+.remove-product {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-size: 1rem;
+  line-height: 1;
+  padding: 0.3rem 0.4rem;
+}
+.remove-product:hover { color: #b91c1c; }
+
+/* ===== Submit ===== */
+#generate-btn {
+  margin-top: 1.4rem;
+  width: 100%;
+  background: var(--navy);
+  color: #fff;
+  padding: 0.75rem 1.2rem;
+  font-size: 0.9rem;
+  letter-spacing: 0.02em;
+}
+#generate-btn:hover { background: var(--navy-soft); }
+
+/* ===== History panel ===== */
+.history-card { padding: 1.25rem 1.4rem; position: sticky; top: 1.5rem; }
+.history-card h2 {
+  margin: 0 0 0.9rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+#history-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.7rem; }
+#history-list:empty::after {
+  content: "Aún no generaste ninguna guía.";
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
+.history-entry {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.65rem 0.75rem;
+  font-size: 0.8rem;
+}
+.history-entry .guide-line { display: flex; align-items: center; gap: 0.4rem; font-weight: 700; }
+.history-entry .guide-number { font-family: var(--mono); }
+.history-entry .meta { color: var(--text-muted); margin: 0.2rem 0 0.55rem; }
+.history-entry .actions { display: flex; gap: 0.5rem; }
+.history-entry .actions button {
+  background: var(--surface-soft);
+  border: 1px solid var(--border);
+  color: var(--navy);
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.32rem 0.55rem;
+}
+.history-entry .actions button:hover { background: var(--border); }
+
+.badge-final {
+  display: inline-flex;
+  align-items: center;
+  background: var(--success-soft);
+  color: var(--success);
+  border-radius: 999px;
+  padding: 0.08rem 0.55rem;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* ===== Responsive (placed last so it wins the cascade at equal specificity) ===== */
+@media (max-width: 820px) {
+  .layout { grid-template-columns: 1fr; padding: 1rem; }
+  .history-card { position: static; }
+}
+
+@media (max-width: 560px) {
+  .field-grid, .field-grid.two { grid-template-columns: 1fr; max-width: none; }
+  .field-group-header { flex-direction: column; align-items: stretch; }
+  .catalog-picker { flex-direction: column; }
+  .catalog-picker select { min-width: 0; }
+  .combobox { min-width: 0; width: 100%; }
+  .doc-table { min-width: 420px; }
+  .topbar { flex-wrap: wrap; }
+  .topbar h1 { margin: 0.3rem 0 0; font-size: 0.85rem; }
+}

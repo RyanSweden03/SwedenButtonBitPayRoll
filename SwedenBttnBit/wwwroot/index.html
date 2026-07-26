@@ -2,64 +2,102 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <title>Generar Guía de Pago</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Generar Guía de Pago — Sweden Button Bit Repair</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23111827'/%3E%3Cpath d='M9 21 L16 8 L23 21 Z' fill='none' stroke='%23f59e0b' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='16' cy='17.5' r='2.4' fill='%23f59e0b'/%3E%3C/svg%3E" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <h1>Generar Guía de Pago</h1>
+  <header class="topbar">
+    <div class="brand">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
+        <rect width="32" height="32" rx="6" fill="#111827" />
+        <path d="M9 21 L16 8 L23 21 Z" fill="none" stroke="#f59e0b" stroke-width="2.4" stroke-linejoin="round" />
+        <circle cx="16" cy="17.5" r="2.4" fill="#f59e0b" />
+      </svg>
+      <div class="brand-text">
+        <strong>SWEDEN</strong>
+        <span>Button Bit Repair</span>
+      </div>
+    </div>
+    <h1>Generar guía de pago</h1>
+  </header>
 
-  <div class="layout">
-    <form id="payroll-form" class="panel">
-      <fieldset>
-        <legend>Cliente</legend>
-        <label>Razón social
-          <input type="text" id="destinatary" required />
-        </label>
-        <label>Dirección
-          <input type="text" id="destinataryAddress" required />
-        </label>
-        <label>Distrito
-          <input type="text" id="destinataryDistrict" required />
-        </label>
-        <label>RUC
-          <input type="number" id="destinataryRUC" required />
-        </label>
-      </fieldset>
+  <main class="layout">
+    <form id="payroll-form" class="card form-card">
+      <section class="field-group">
+        <div class="field-group-header">
+          <h2>Cliente</h2>
+          <select id="client-select" class="combobox"></select>
+        </div>
+        <div class="field-grid">
+          <label>Razón social
+            <input type="text" id="destinatary" required />
+          </label>
+          <label>RUC
+            <input type="text" inputmode="numeric" id="destinataryRUC" class="mono" required />
+          </label>
+          <label>Dirección
+            <input type="text" id="destinataryAddress" required />
+          </label>
+          <label>Distrito
+            <input type="text" id="destinataryDistrict" required />
+          </label>
+        </div>
+      </section>
 
-      <fieldset>
-        <legend>Guía</legend>
-        <label>Fecha
-          <input type="date" id="date" required />
-        </label>
-        <label>N&deg; de guía
-          <input type="text" id="guideNumber" placeholder="Sugerido según historial" />
-        </label>
-      </fieldset>
+      <section class="field-group">
+        <h2>Guía</h2>
+        <div class="field-grid two">
+          <label>Fecha
+            <input type="date" id="date" required />
+          </label>
+          <label>N.º de guía
+            <input type="text" id="guideNumber" class="mono" placeholder="Sugerido según historial" />
+          </label>
+        </div>
+      </section>
 
-      <fieldset>
-        <legend>Productos</legend>
-        <table id="products-table">
-          <thead>
-            <tr>
-              <th>Descripción</th>
-              <th>Cantidad</th>
-              <th>Precio</th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody id="products-body"></tbody>
-        </table>
-        <button type="button" id="add-product">+ Agregar producto</button>
-      </fieldset>
+      <section class="field-group">
+        <div class="field-group-header">
+          <h2>Productos</h2>
+          <div class="catalog-picker">
+            <select id="product-catalog"></select>
+            <button type="button" id="add-from-catalog">Agregar</button>
+          </div>
+        </div>
+
+        <div class="table-scroll">
+          <table id="products-table" class="doc-table">
+            <thead>
+              <tr>
+                <th class="col-price">Precio</th>
+                <th class="col-qty">Cantidad</th>
+                <th class="col-total">Total</th>
+                <th>Descripción</th>
+                <th class="col-remove"></th>
+              </tr>
+            </thead>
+            <tbody id="products-body"></tbody>
+            <tfoot>
+              <tr>
+                <td colspan="2"></td>
+                <td id="products-total" class="mono col-total">$0.00</td>
+                <td colspan="2">Total</td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+      </section>
 
       <button type="submit" id="generate-btn">Generar PDF</button>
     </form>
 
-    <section class="panel">
+    <aside class="card history-card">
       <h2>Historial</h2>
       <ul id="history-list"></ul>
-    </section>
-  </div>
+    </aside>
+  </main>
 
   <script src="app.js"></script>
 </body>
